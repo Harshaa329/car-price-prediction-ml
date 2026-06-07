@@ -99,7 +99,7 @@ To capture complex interactions between numerical and categorical features, a Ra
 2. Engine Size
 3. Mileage
 
-![Random Forest Predictions](Visuals/Random.png)
+![Random Forest Predictions](Visuals/Random forest.png)
 
 ![Feature Importance](Visuals/Random_Forest_Feature_Importance.png)
 
