@@ -1,106 +1,63 @@
 # 🚗 Car Price Prediction & Market Segmentation using Machine Learning
 
-## Overview
+**Understanding AI — MSc AI & Data Science | University of Hull**
 
-This project presents an end-to-end machine learning solution for predicting used car prices and identifying market segments using both supervised and unsupervised learning techniques.
-
-A comprehensive comparison was conducted across multiple regression algorithms, ensemble methods, and deep learning models to determine the most effective approach for vehicle price estimation. Additionally, clustering techniques were applied to uncover hidden patterns within the automotive market.
-
-The project demonstrates the complete machine learning lifecycle, including data preprocessing, feature engineering, model development, evaluation, visualization, and business insight generation.
+A comprehensive machine learning project analysing 50,000+ used vehicle records to predict car prices using regression, ensemble learning, deep learning, and clustering techniques.
 
 ---
 
-## Business Objective
+## 📊 Project Highlights
 
-Accurate vehicle valuation is critical for:
-
-* Automotive dealerships
-* Vehicle marketplaces
-* Insurance providers
-* Fleet management companies
-* Automotive finance institutions
-
-The objective was to build a scalable machine learning solution capable of estimating vehicle prices while providing actionable insights into market segmentation and pricing behavior.
-
----
-
-## Dataset
-
-The dataset contains approximately **50,000 used vehicle records** with both numerical and categorical attributes.
-
-### Features
-
-| Feature             | Description             |
-| ------------------- | ----------------------- |
-| Manufacturer        | Vehicle manufacturer    |
-| Model               | Vehicle model           |
-| Engine Size         | Engine capacity         |
-| Fuel Type           | Petrol, Diesel, Hybrid  |
-| Year of Manufacture | Vehicle production year |
-| Mileage             | Distance travelled      |
-| Price               | Vehicle sale price      |
+| Area                      | Technique                       | Key Result                           |
+| ------------------------- | ------------------------------- | ------------------------------------ |
+| Single Feature Regression | Linear + Polynomial Regression  | Best R²: 0.615                       |
+| Multi-Feature Regression  | Polynomial Regression           | R²: 0.862                            |
+| Ensemble Learning         | Random Forest Regressor         | R²: 0.998                            |
+| Deep Learning             | Artificial Neural Network (ANN) | R²: 0.999                            |
+| Clustering                | K-Means + Agglomerative         | Optimal K=2 identified               |
+| Feature Importance        | Random Forest Analysis          | Year of Manufacture most influential |
 
 ---
 
-## Project Workflow
+## 🚘 Vehicle Price Prediction Analysis
 
-### 1. Data Preprocessing
+**Dataset:** ~50,000 used vehicle records across multiple manufacturers and models
 
-* Data quality assessment
-* Duplicate removal
-* Feature validation checks
-* Categorical encoding
-* Feature scaling
-* Train-test split
+### Features Used
 
-### 2. Exploratory Data Analysis
-
-* Price distribution analysis
-* Feature relationship analysis
-* Correlation exploration
-* Market trend visualization
-
-### 3. Supervised Learning
-
-Implemented and evaluated:
-
-* Linear Regression
-* Polynomial Regression
-* Random Forest Regressor
-* Artificial Neural Network (ANN)
-
-### 4. Unsupervised Learning
-
-Implemented:
-
-* K-Means Clustering
-* Agglomerative Clustering
-* Silhouette Analysis
+* Manufacturer
+* Model
+* Fuel Type
+* Engine Size
+* Mileage
+* Year of Manufacture
+* Vehicle Price
 
 ---
 
-# Machine Learning Models
+### Single Feature Regression
 
-## Single Feature Regression
-
-Evaluated the predictive power of:
+Evaluated the predictive power of individual variables:
 
 * Engine Size
 * Mileage
 * Year of Manufacture
 
-Methods:
+#### Key Findings
 
-* Linear Regression
-* Polynomial Regression
+* Year of Manufacture was the strongest individual predictor
+* Polynomial Regression consistently outperformed Linear Regression
+* Engine Size alone showed limited explanatory power
 
-### Key Finding
+![Engine Size vs Price](Visuals/Engine%20size.png)
 
-Year of Manufacture emerged as the strongest individual predictor of vehicle price.
+![Mileage vs Price](Visuals/Mileage.png)
+
+![Year of Manufacture vs Price](Visuals/Year%20of%20manufacture.png)
 
 ---
 
-## Multi-Feature Regression
+### Multi-Feature Regression
 
 Combined:
 
@@ -108,218 +65,130 @@ Combined:
 * Mileage
 * Year of Manufacture
 
-Methods:
+#### Results
 
-* Multiple Linear Regression
-* Polynomial Regression
+| Model                 | R²    | RMSE  |
+| --------------------- | ----- | ----- |
+| Linear Regression     | 0.681 | 9,286 |
+| Polynomial Regression | 0.862 | 6,102 |
 
-### Result
-
-Polynomial Regression significantly improved prediction accuracy compared to individual feature models.
-
----
-
-## Random Forest Regression
-
-Implemented a Random Forest Regressor using both numerical and categorical features.
-
-### Advantages
-
-* Captures non-linear relationships
-* Handles feature interactions automatically
-* Provides feature importance analysis
-* Strong predictive performance
-
-### Key Insight
-
-Vehicle age, engine size, and mileage were identified as the most influential pricing factors.
-
----
-
-## Artificial Neural Network (ANN)
-
-A deep learning regression model was developed using:
-
-* Dense Layers
-* ReLU Activation
-* Dropout Regularization
-* Adam Optimizer
-
-### Benefits
-
-* Learns complex feature relationships
-* Strong generalization capability
-* High prediction accuracy
-
----
-
-# Model Performance
-
-| Model                                     | R² Score |
-| ----------------------------------------- | -------- |
-| Linear Regression (Single Feature)        | 0.40     |
-| Polynomial Regression (Single Feature)    | 0.52     |
-| Linear Regression (Multiple Features)     | 0.67     |
-| Polynomial Regression (Multiple Features) | 0.86     |
-| Random Forest Regression                  | 0.998    |
-| ANN Regression                            | 0.999    |
-
-### Best Performing Model
-
-🏆 **Artificial Neural Network (ANN)**
-
-* Highest predictive accuracy
-* Lowest prediction error
-* Best overall performance
-
----
-
-# Clustering & Market Segmentation
-
-To complement predictive modelling, clustering techniques were applied to identify natural groupings within the used car market.
-
-## Techniques Used
-
-### K-Means Clustering
-
-Used to identify vehicle groups based on:
-
-* Engine Size
-* Mileage
-* Price
-
-### Agglomerative Clustering
-
-Applied to compare cluster quality and hierarchical grouping behavior.
-
-### Silhouette Analysis
-
-Used to determine the optimal number of clusters.
-
----
-
-## Business Insights
-
-The clustering analysis revealed distinct vehicle segments that can support:
-
-* Inventory planning
-* Dynamic pricing strategies
-* Customer segmentation
-* Market positioning
-* Vehicle recommendation systems
-
----
-
-# Visualizations
-
-## Regression Analysis
-
-### Actual vs Predicted Price (Multiple Features)
+The Polynomial Regression model significantly improved predictive performance by capturing non-linear relationships between vehicle characteristics and pricing.
 
 ![Actual vs Predicted Price](Visuals/Actual%20vs%20Predicted%20Price%20\(Multiple%20Features\).png)
 
-### Engine Size vs Price
-
-![Engine Size](Visuals/Engine%20size.png)
-
-### Mileage vs Price
-
-![Mileage](Visuals/Mileage.png)
-
-### Year of Manufacture vs Price
-
-![Year of Manufacture](Visuals/Year%20of%20manufacture.png)
-
 ---
 
-## Random Forest Analysis
+## 🌲 Random Forest Regression
 
-### Random Forest Predictions
+To capture complex interactions between numerical and categorical features, a Random Forest Regressor was implemented.
 
-![Random Forest](Visuals/Random.png)
+### Performance
 
-### Feature Importance
+* R² Score: **0.998**
+* RMSE: **644**
+
+### Key Insights
+
+* Near-perfect prediction performance
+* Strong handling of non-linear relationships
+* High interpretability through feature importance analysis
+
+#### Top Price Drivers
+
+1. Year of Manufacture
+2. Engine Size
+3. Mileage
+
+![Random Forest Predictions](Visuals/Random.png)
 
 ![Feature Importance](Visuals/Random_Forest_Feature_Importance.png)
 
 ---
 
-## Model Comparison
+## 🧠 Artificial Neural Network (ANN)
 
-### R² Comparison
+A fully connected neural network was developed using:
 
-![Model Comparison](Visuals/Model_Comparison_R2.png)
+* Dense Layers
+* ReLU Activation
+* Dropout Regularisation
+* Adam Optimiser
 
-### RMSE Comparison
+### Architecture
+
+* Input Layer
+* Hidden Layer (128 Neurons)
+* Hidden Layer (64 Neurons)
+* Dropout (30%)
+* Output Layer
+
+### Performance
+
+| Metric   | Value |
+| -------- | ----- |
+| R² Score | 0.999 |
+| RMSE     | 411   |
+
+The ANN achieved the highest overall predictive performance among all evaluated models.
+
+---
+
+## 📈 Model Comparison
+
+The progression from simple regression models to advanced machine learning approaches demonstrates the value of incorporating additional features and non-linear learning methods.
+
+| Model                            | R² Score |
+| -------------------------------- | -------- |
+| Linear Regression (Single)       | 0.40     |
+| Polynomial Regression (Single)   | 0.52     |
+| Linear Regression (Multiple)     | 0.67     |
+| Polynomial Regression (Multiple) | 0.86     |
+| Random Forest                    | 0.998    |
+| ANN                              | 0.999    |
+
+### Visual Comparison
+
+![Model Comparison R2](Visuals/Model_Comparison_R2.png)
 
 ![Model Comparison RMSE](Visuals/Model_Comparison_RMSE.png)
 
 ---
 
-## Clustering Analysis
+## 🔍 Market Segmentation using Clustering
 
-### Engine Size vs Price Clusters
+Unsupervised learning techniques were applied to identify hidden patterns within the used vehicle market.
+
+### Clustering Techniques
+
+* K-Means Clustering
+* Agglomerative Clustering
+* Silhouette Analysis
+
+### Findings
+
+* Optimal cluster count identified using Silhouette Score
+* Engine Size and Price produced the clearest separation
+* Distinct vehicle segments emerged based on value and performance characteristics
+
+### Engine Size vs Price Segmentation
 
 ![Engine Size Clusters](Visuals/k-Means%20Clusters%20\['Engine%20size',%20'Price'].png)
 
-### Mileage vs Price Clusters
+### Mileage vs Price Segmentation
 
 ![Mileage Clusters](Visuals/k-Means%20Clusters%20\['Mileage',%20'Price'].png)
 
 ---
 
-# Technology Stack
+## 🛠️ Tech Stack
 
-### Programming Language
-
-* Python
-
-### Data Processing
-
-* Pandas
-* NumPy
-
-### Machine Learning
-
-* Scikit-Learn
-
-### Deep Learning
-
-* TensorFlow
-* Keras
-
-### Data Visualization
-
-* Matplotlib
-* Seaborn
-
-### Development Environment
-
-* Jupyter Notebook
+`Python` `Pandas` `NumPy` `Scikit-Learn` `TensorFlow` `Keras` `Matplotlib` `Seaborn` `Jupyter Notebook`
 
 ---
 
-# Key Achievements
-
-✅ Built a complete end-to-end machine learning pipeline
-
-✅ Evaluated multiple regression approaches
-
-✅ Achieved R² > 0.99 using ANN and Random Forest models
-
-✅ Applied clustering techniques for market segmentation
-
-✅ Generated actionable insights from automotive sales data
-
-✅ Demonstrated both supervised and unsupervised learning methodologies
-
----
-
-# Repository Structure
+## 📂 Repository Structure
 
 ```text
-Car-Price-Prediction/
-│
 ├── car-price-prediction-ml.ipynb
 ├── car-price-prediction-ml.pdf
 ├── README.md
@@ -339,14 +208,26 @@ Car-Price-Prediction/
 
 ---
 
-# Author
+## 🚀 How to Run
 
-**Harshaa Hariharan**
+```bash
+git clone https://github.com/Harshaa329/car-price-prediction.git
 
-MSc Data Science & Artificial Intelligence
-Machine Learning Engineer | AI Engineer | Data Engineer
+cd car-price-prediction
 
-📍 Chennai, India
-🌍 Open to UAE Opportunities
-💼 LinkedIn: https://www.linkedin.com/in/harshaa-harshini
-💻 GitHub: https://github.com/Harshaa329
+pip install -r requirements.txt
+
+jupyter notebook car-price-prediction-ml.ipynb
+```
+
+---
+
+## 🙋‍♀️ Author
+
+**Harshaa Hariharan** — ML Engineer & Data Scientist
+
+LinkedIn: https://www.linkedin.com/in/harshaa-harshini
+
+GitHub: https://github.com/Harshaa329
+
+Portfolio: Coming Soon
