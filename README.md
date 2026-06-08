@@ -230,4 +230,4 @@ LinkedIn: https://www.linkedin.com/in/harshaa-harshini
 
 GitHub: https://github.com/Harshaa329
 
-Portfolio: Coming Soon
+Portfolio: [https://harshaa329.github.io](https://harshaa329.github.io)
